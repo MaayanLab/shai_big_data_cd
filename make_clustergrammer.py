@@ -25,7 +25,7 @@ net.normalize(axis='row', norm_type='zscore', keep_orig=True)
   # net.make_clust()
   # net.dendro_cats('row', 5)
 
-net.cluster(dist_type='cos',views=['N_row_sum', 'N_row_var'] , dendro=True,
+net.cluster(dist_type='cos',views=[] , dendro=True,
                sim_mat=True, filter_sim=0.1, calc_cat_pval=False, enrichrgram=False)
 
 # write jsons for front-end visualizations
