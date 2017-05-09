@@ -2,13 +2,33 @@
 Example files
 */
 
+function getParameterByName(name, url) {
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, "\\$&");
+    var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, " "));
+}
+
 var hzome = ini_hzome();
 
-make_clust('mult_view.json');
+make_clust('mult_view');
+
+viz_name = getParameterByName('viz_name');
+
+if (viz_name === null){
+  viz_name = 'mult_view';
+} else {
+  console.log(viz_name);
+}
 
 var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
 
 function make_clust(inst_network){
+
+    inst_network = inst_network + '.json';
 
     d3.json('json/'+inst_network, function(network_data){
 
