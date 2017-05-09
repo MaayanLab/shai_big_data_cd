@@ -11,7 +11,7 @@ from clustergrammer import Network
 net = Network()
 
 # load matrix tsv file
-net.load_file('txt/big_data_cd.txt')
+net.load_file('txt/big_data_cd1.txt')
 
 # optional filtering and normalization
 ##########################################
@@ -29,6 +29,6 @@ net.cluster(dist_type='cos',views=[] , dendro=True,
                sim_mat=True, filter_sim=0.1, calc_cat_pval=False, enrichrgram=False)
 
 # write jsons for front-end visualizations
-net.write_json_to_file('viz', 'json/mult_view.json', 'indent')
-net.write_json_to_file('sim_row', 'json/mult_view_sim_row.json', 'no-indent')
-net.write_json_to_file('sim_col', 'json/mult_view_sim_col.json', 'no-indent')
+net.write_json_to_file('viz', 'json/big_data_cd1.json', 'indent')
+# net.write_json_to_file('sim_row', 'json/mult_view_sim_row.json', 'no-indent')
+# net.write_json_to_file('sim_col', 'json/mult_view_sim_col.json', 'no-indent')

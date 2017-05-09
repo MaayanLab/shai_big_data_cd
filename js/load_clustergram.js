@@ -14,7 +14,6 @@ function getParameterByName(name, url) {
 
 var hzome = ini_hzome();
 
-make_clust('mult_view');
 
 viz_name = getParameterByName('viz_name');
 
@@ -23,6 +22,7 @@ if (viz_name === null){
 } else {
   console.log(viz_name);
 }
+make_clust(viz_name);
 
 var about_string = 'Zoom, scroll, and click buttons to interact with the clustergram. <a href="http://amp.pharm.mssm.edu/clustergrammer/help"> <i class="fa fa-question-circle" aria-hidden="true"></i> </a>';
 
